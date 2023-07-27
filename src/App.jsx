@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-        <p>carel</p>
+        <p>carel :{carnum} </p>
     </>
   )
 }
