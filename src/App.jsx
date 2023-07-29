@@ -5,7 +5,7 @@ import { Logo } from './components/Logo'
 import logof from './assets/fc.png'
 
 function App() {
-  const a = 10;
+ 
 
   return (
     <div>
