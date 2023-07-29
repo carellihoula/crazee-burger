@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import {Logo } from '../Logo'
+import React, { useState } from 'react'
 
-function LoginPage() {
+export default function LoginFormulaire() {
     const [prenom, setPrenom] = useState('')
     const handleChange = (e) => { 
             setPrenom(e.target.value)
@@ -12,11 +11,10 @@ function LoginPage() {
         setPrenom('')
     }
   return (
-    <>
-        <Logo />
-        <h1>Bienvenue chez nous !</h1>
-        <h2>connectez-vous</h2>
+    
         <form onSubmit={handleSubmit}>
+          <h1>Bienvenue chez nous !</h1>
+          <h2>connectez-vous</h2>
             <input type="text" 
             value={prenom}
             onChange={handleChange}
@@ -25,8 +23,6 @@ function LoginPage() {
             />
             <button>Accédez à votre espace</button>
         </form>
-    </>
+    
   )
 }
-
-export default LoginPage
