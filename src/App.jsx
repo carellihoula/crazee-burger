@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+
+import LoginPage from './LoginPage'
+import { Logo } from './components/Logo'
+import logof from './assets/fc.png'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const carnum = 10;
+  const a = 10;
 
   return (
-    <>
-        <p>carel :{carnum} luco</p>
-    </>
+    <div>
+        
+        <Logo imageUrl={logof} longueur={50} hauteur={50} />
+        <LoginPage/>
+    </div>
   )
 }
 
