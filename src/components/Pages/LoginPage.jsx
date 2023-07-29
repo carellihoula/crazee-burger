@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {Logo } from '../Logo'
 
 function LoginPage() {
     const [prenom, setPrenom] = useState('')
@@ -12,6 +13,7 @@ function LoginPage() {
     }
   return (
     <>
+        <Logo />
         <h1>Bienvenue chez nous !</h1>
         <h2>connectez-vous</h2>
         <form onSubmit={handleSubmit}>
