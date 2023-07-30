@@ -8,7 +8,7 @@ function LoginPage() {
   return (
     <div>
         <Logo imageUrl={logo} longueur={100} hauteur={50}/>
-        <LoginFormulaire/>
+        <LoginFormulaire onLogin={(prenom) => console.log(`Prenom saisi : ${prenom}`)}/>
         
     </div>
   )

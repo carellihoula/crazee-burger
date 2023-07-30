@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginFormulaire() {
-    const [prenom, setPrenom] = useState('')
+    const [username, setUsername] = useState('')
+    const navigate = useNavigate()
+
     const handleChange = (e) => { 
-            setPrenom(e.target.value)
+        setUsername(e.target.value)
      }
     const handleSubmit =(e) =>{
         e.preventDefault()
-        alert(`Bonjour ${prenom}`)
-        setPrenom('')
+        //alert(`Bonjour ${prenom}`)
+        setUsername('')
+        navigate(`/order/${username}`)
     }
   return (
     
@@ -16,7 +20,7 @@ export default function LoginFormulaire() {
           <h1>Bienvenue chez nous !</h1>
           <h2>connectez-vous</h2>
             <input type="text" 
-            value={prenom}
+            value={username}
             onChange={handleChange}
             placeholder='Entrez votre prenom' 
             required   
