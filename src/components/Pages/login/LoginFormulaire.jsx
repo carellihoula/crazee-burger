@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-export default function LoginFormulaire() {
+export default function LoginFormulaire({onLogin}) {
     const [prenom, setPrenom] = useState('')
     const handleChange = (e) => { 
             setPrenom(e.target.value)
      }
     const handleSubmit =(e) =>{
         e.preventDefault()
+        onLogin(prenom)
         alert(`Bonjour ${prenom}`)
         setPrenom('')
     }
