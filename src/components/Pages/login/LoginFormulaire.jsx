@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function LoginFormulaire({onLogin}) {
     const [prenom, setPrenom] = useState('')
@@ -22,7 +23,7 @@ export default function LoginFormulaire({onLogin}) {
             placeholder='Entrez votre prenom' 
             required   
             />
-            <button>Accédez à votre espace</button>
+            <button>Accédez à votre espace</button> <Link to="/order">Vers order</Link>
         </form>
     
   )
