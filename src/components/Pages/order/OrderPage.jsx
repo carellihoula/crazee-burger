@@ -1,13 +1,19 @@
 //import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import LoginPage from '../login/LoginPage';
+import { Link, useParams } from 'react-router-dom'
+//import LoginPage from '../login/LoginPage';
+
 
 function OrderPage() {
+  //state
+  const {username} = useParams()
 
+  //behavior
+
+  //Output
   return (
 
     <div>
-            <h1>Bonjour {}</h1>
+            <h1>Bonjour {username.toLowerCase()}</h1>
             <Link to="/">
                <button>Deconnexion</button>
             </Link>     
