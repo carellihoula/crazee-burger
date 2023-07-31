@@ -1,16 +1,31 @@
 
 import {Logo } from '../../Logo'
-import logo from '../../../assets/fc.png'
 import LoginFormulaire from './LoginFormulaire'
+import { styled } from 'styled-components'
+import background from '../../../assets/F03/burger-background.jpg'
 
-function LoginPage() {
+const Container = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    background-image :linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${background});
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position: center;
+    height:100vh;
     
+  `
+function LoginPage() {
+  
   return (
-    <div>
-        <Logo imageUrl={logo} longueur={100} hauteur={50}/>
-        <LoginFormulaire onLogin={(prenom) => console.log(`Prenom saisi : ${prenom}`)}/>
+    <Container>
+          <Logo width="200px" height="150px" fontSize="110px"/>
+          <LoginFormulaire />
+    </Container>
         
-    </div>
+        
+
   )
 }
 
