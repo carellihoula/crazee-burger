@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { BsPersonCircle } from 'react-icons/bs';
 import { FiChevronRight } from 'react-icons/fi'
 import Icon from '../../Icon';
+import { theme } from '../../../theme';
 
 const Form  = styled.form`
 display:flex;
@@ -50,10 +51,9 @@ height: 53px;
 padding: 18px 106.203px;
 justify-content: center;
 align-items: flex-start;
-
 border-radius: 5px;
 border: 1px solid #FF9F1B;
-background: #FF9F1B;
+background: ${theme.colors.primary_burger};
 color: #FFF;
 text-align: center;
 font-family: Arial, sans-serif;
@@ -64,6 +64,11 @@ line-height: 15px;
 margin-top: 18px;
 cursor:pointer;
 box-sizing: border-box;
+
+&:hover{
+  background: ${theme.colors.white};
+  color: ${theme.colors.primary_burger};
+}
 
 `
 const StyledInput = styled.input`

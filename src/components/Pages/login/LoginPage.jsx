@@ -2,7 +2,7 @@
 import {Logo } from '../../Logo'
 import LoginFormulaire from './LoginFormulaire'
 import { styled } from 'styled-components'
-import background from '../../../assets/F03/burger-background.jpg'
+import background from '../../../assets/burger-background.jpg'
 
 const Container = styled.div`
     display:flex;

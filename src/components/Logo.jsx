@@ -1,25 +1,8 @@
 // eslint-disable-next-line react/prop-types
-import logo from '../assets/F03/logo-orange.png'
+import logo from '../assets/logo-orange.png'
 import styled from 'styled-components'
 
-const LogoStyled = styled.span`
-    color: #FFA01B;
-    text-align: center;
-    font-family: 'Amatic SC', cursive;
-    font-size: ${props => props.fontSize || '110px'};
-    font-style: normal;
-    font-weight: 700;
-    line-height: 115px; /* 104.545% */
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    
-`
-const LogoImage = styled.img`
-    
-    
-    
 
-`
 const Container = styled.div`
    display:flex;
    align-items: center; 
@@ -37,3 +20,24 @@ export const Logo = (props) =>{
         
     )
 }
+
+
+const LogoStyled = styled.span`
+    color: #FFA01B;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: ${props => props.fontSize || '110px'};
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115px; /* 104.545% */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    
+    
+`
+const LogoImage = styled.img`
+    
+    
+    
+
+`
