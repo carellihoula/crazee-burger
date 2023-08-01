@@ -76,6 +76,11 @@ width:320px;
 border-style: none;
 outline: none;
 margin-left:10px;
+color: #17161A;
+font-family: Arial;
+font-size: 15px;
+font-style: normal;
+font-weight: bold; 
 
 &::placeholder{
 color: #D3D3D3;
