@@ -3,16 +3,11 @@ import logo from '../assets/logo-orange.png'
 import styled from 'styled-components'
 
 
-const Container = styled.div`
-   display:flex;
-   align-items: center; 
-   justify-content: center
 
-`
 export const Logo = (props) =>{
     
     return(
-        <Container>
+        <Container  onClick = {props.handleClick}>
                 <LogoStyled fontSize={props.fontSize}>CRAZEE</LogoStyled> 
                 <LogoImage src={logo} width={props.width} height={props.height} /> 
                 <LogoStyled fontSize={props.fontSize}>BURGER</LogoStyled> 
@@ -35,6 +30,14 @@ const LogoStyled = styled.span`
     
     
 `
+const Container = styled.div`
+   display:flex;
+   align-items: center; 
+   justify-content: center;
+   cursor:pointer;
+
+`
+
 const LogoImage = styled.img`
     
 `

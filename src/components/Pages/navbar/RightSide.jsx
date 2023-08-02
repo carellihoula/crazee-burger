@@ -12,7 +12,7 @@ export default function RightSide() {
   return (
     <Container>
                 <div className="profil-text">
-                    <p>Hey, <span className='username'>{username}</span></p>  
+                    <p>Hey, <span className='username'>{username.toLowerCase()}</span></p>  
                     <p className='deconnect'>
                      <Link to="/" className='deconnect'>se déconnecter</Link>
                     </p>

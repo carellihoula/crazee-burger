@@ -1,20 +1,16 @@
 import styled from 'styled-components';
 import { Logo } from '../../Logo';
 import RightSide from './RightSide';
+import { RefreshhPage } from '../../RefreshPage';
 
 
 export default function Navbar() {
 
-  
-
-  const handleClick = ()=>{
-        window.location.reload()
-  }
   return (
     <Container>
-            <div onClick={handleClick}> 
-                <Logo width="80px" height="60px" fontSize="36px"/> 
-            </div>
+             
+                <Logo width="80px" height="60px" fontSize="36px" handleClick = {RefreshhPage}/> 
+            
             <RightSide/>
     </Container>
   )
