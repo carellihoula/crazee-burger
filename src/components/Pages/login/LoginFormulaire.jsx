@@ -4,7 +4,53 @@ import styled from 'styled-components';
 import { BsPersonCircle } from 'react-icons/bs';
 import { FiChevronRight } from 'react-icons/fi'
 import Icon from '../../Icon';
-import { theme } from '../../../theme';
+//import { theme } from '../../../theme';
+import ButtonComponent from '../../ButtonComponent';
+
+
+export default function LoginFormulaire() {
+
+    const [username, setUsername] = useState('')
+    const navigate = useNavigate()
+
+
+    const handleChange = (e) => { 
+        setUsername(e.target.value)
+     }
+    const handleSubmit =(e) =>{
+        e.preventDefault()
+        //alert(`Bonjour ${prenom}`)
+        setUsername('')
+        navigate(`/order/${username}`)
+    }
+  return (
+    <>
+        
+        <Form onSubmit={handleSubmit}>
+
+          <h1>Bienvenue chez nous !</h1>
+          <Bar/>
+          <h2>connectez-vous</h2>
+
+          <DivInput>
+          <Icon icon={BsPersonCircle} size="15px" color="black" />
+
+                <StyledInput type="text" 
+                    value={username}
+                    onChange={handleChange}
+                    placeholder='Entrez votre prenom' 
+                    required
+                    width = "320" 
+                    />
+          </DivInput>
+            <ButtonComponent label="Accédez à mon espace" icon={FiChevronRight} width="447px" height="53px"/>
+        </Form>
+    </>
+       
+    
+  )
+}
+
 
 const Form  = styled.form`
 display:flex;
@@ -44,33 +90,7 @@ width:447px;
 height:55px;
 
 `
-const Button = styled.button`
-display: flex;
-width: 447px;
-height: 53px;
-padding: 18px 106.203px;
-justify-content: center;
-align-items: flex-start;
-border-radius: 5px;
-border: 1px solid #FF9F1B;
-background: ${theme.colors.primary_burger};
-color: #FFF;
-text-align: center;
-font-family: Arial, sans-serif;
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-line-height: 15px; 
-margin-top: 18px;
-cursor:pointer;
-box-sizing: border-box;
 
-&:hover{
-  background: ${theme.colors.white};
-  color: ${theme.colors.primary_burger};
-}
-
-`
 const StyledInput = styled.input`
 width:320px;
 border-style: none;
@@ -100,47 +120,3 @@ background: #F56A2C;
 text-align:center;
 margin : 32.16px 0 40px 0;
 `
-
-export default function LoginFormulaire() {
-
-    const [username, setUsername] = useState('')
-    const navigate = useNavigate()
-
-
-    const handleChange = (e) => { 
-        setUsername(e.target.value)
-     }
-    const handleSubmit =(e) =>{
-        e.preventDefault()
-        //alert(`Bonjour ${prenom}`)
-        setUsername('')
-        navigate(`/order/${username}`)
-    }
-  return (
-    <>
-        
-        <Form onSubmit={handleSubmit}>
-
-          <h1>Bienvenue chez nous !</h1>
-          <Bar/>
-          <h2>connectez-vous</h2>
-
-          <DivInput>
-          <Icon icon={BsPersonCircle} size="15px" color="black" />
-
-                <StyledInput type="text" 
-                    value={username}
-                    onChange={handleChange}
-                    placeholder='Entrez votre prenom' 
-                    required
-                    width = "320" 
-                    />
-          </DivInput>
-            
-            <Button>Accédez à mon espace <Icon icon={FiChevronRight} /></Button>
-        </Form>
-    </>
-       
-    
-  )
-}

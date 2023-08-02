@@ -12,7 +12,7 @@ const Container = styled.div`
 export const Logo = (props) =>{
     
     return(
-        <Container width={props.width} height={props.height} >
+        <Container>
                 <LogoStyled fontSize={props.fontSize}>CRAZEE</LogoStyled> 
                 <LogoImage src={logo} width={props.width} height={props.height} /> 
                 <LogoStyled fontSize={props.fontSize}>BURGER</LogoStyled> 
@@ -37,7 +37,4 @@ const LogoStyled = styled.span`
 `
 const LogoImage = styled.img`
     
-    
-    
-
 `

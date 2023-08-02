@@ -3,8 +3,37 @@
 //import LoginPage from '../login/LoginPage';
 import styled from 'styled-components';
 import { theme } from '../../../theme';
-import Navbar from '../Navbar';
+import Navbar from '../navbar/Navbar';
+//import ButtonComponent from '../../ButtonComponent';
 
+
+
+
+function OrderPage() {
+  //state
+  
+
+  //behavior
+
+  //Output
+  return (
+          
+    <Container>
+      <div className="sous-container">
+            <Navbar/>
+            <div className='main'>
+                
+            </div>
+            
+      </div>
+             
+    </Container>
+  )
+}
+
+export default OrderPage
+
+// CSS ------------------------------------------------->>
 const Container = styled.div`
     display : flex;
     justify-content: center;
@@ -32,28 +61,3 @@ const Container = styled.div`
     }
 `;
 
-
-
-function OrderPage() {
-  //state
-  
-
-  //behavior
-
-  //Output
-  return (
-          
-    <Container>
-      <div className="sous-container">
-            <Navbar/>
-            <div className='main'>
-
-            </div>
-            
-      </div>
-             
-    </Container>
-  )
-}
-
-export default OrderPage
