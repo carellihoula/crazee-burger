@@ -1,14 +1,11 @@
 import styled from 'styled-components';
-import { Logo } from '../Logo';
-import Icon from '../Icon';
-import { BsPersonCircle } from 'react-icons/bs';
-import { Link, useParams } from 'react-router-dom'
-
+import { Logo } from '../../Logo';
+import RightSide from './RightSide';
 
 
 export default function Navbar() {
 
-  const {username} = useParams()
+  
 
   const handleClick = ()=>{
         window.location.reload()
@@ -18,15 +15,7 @@ export default function Navbar() {
             <div onClick={handleClick}> 
                 <Logo width="80px" height="60px" fontSize="36px"/> 
             </div>
-            <div className="profil-deconnect">
-                <div className="profil-text">
-                    <p>Hey, {username}</p>  
-                    <p>
-                     <Link to="/">se déconnecter</Link>
-                    </p>
-                </div>
-                <Icon icon={BsPersonCircle} size="40px" color="gray"/>
-            </div>
+            <RightSide/>
     </Container>
   )
 }
@@ -58,6 +47,7 @@ span{
 p{
 color: #747B91;
 margin-right: 10px;
+margin-bottom: 6px;
 text-align: right;
 font-family: 'Open Sans', sans-serif;
 font-size: 16px;
