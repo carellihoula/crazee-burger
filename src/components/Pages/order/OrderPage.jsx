@@ -4,6 +4,8 @@
 import styled from 'styled-components';
 import { theme } from '../../../theme';
 import Navbar from '../navbar/Navbar';
+import Card from './Card';
+import CardList from './CardList';
 //import ButtonComponent from '../../ButtonComponent';
 
 
@@ -22,6 +24,7 @@ function OrderPage() {
       <div className="sous-container">
             <Navbar/>
             <div className='main'>
+                <CardList/>
                 
             </div>
             
@@ -50,6 +53,7 @@ const Container = styled.div`
     background: #F00;
     }
     .main{
+    overflow-y: scroll;
     width: 100%;
     height: 90%;
     padding-top:0;
