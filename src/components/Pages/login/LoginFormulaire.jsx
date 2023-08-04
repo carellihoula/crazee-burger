@@ -88,6 +88,7 @@ border-radius: 5px;
 background: #FFF;
 width:447px;
 height:55px;
+margin-bottom: 18px;
 
 `
 
