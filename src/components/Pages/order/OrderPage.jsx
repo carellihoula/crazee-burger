@@ -4,8 +4,7 @@
 import styled from 'styled-components';
 import { theme } from '../../../theme';
 import Navbar from '../navbar/Navbar';
-import Card from './Card';
-import CardList from './CardList';
+import Main from './Main';
 //import ButtonComponent from '../../ButtonComponent';
 
 
@@ -22,11 +21,12 @@ function OrderPage() {
           
     <Container>
       <div className="sous-container">
-            <Navbar/>
-            <div className='main'>
-                <CardList/>
-                
-            </div>
+            
+                <Navbar/>
+            
+            
+                <Main/>     
+            
             
       </div>
              
@@ -53,9 +53,9 @@ const Container = styled.div`
     background: #F00;
     }
     .main{
-    overflow-y: scroll;
+    overflow-y: hidden;
     width: 100%;
-    height: 90%;
+    height: 100vh;
     padding-top:0;
     flex-shrink: 0;
     border-radius: 0px 0px 15px 15px;
