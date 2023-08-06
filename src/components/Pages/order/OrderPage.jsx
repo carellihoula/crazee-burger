@@ -47,7 +47,7 @@ const Container = styled.div`
     .sous-container{
     
     padding:0;
-    width: 95%;
+    width: 80%;
     height: 94%;
     border-radius: 15px;
     background: #F00;
