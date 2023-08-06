@@ -2,6 +2,7 @@ import Icon from '../../Icon';
 import { BsPersonCircle } from 'react-icons/bs';
 import { Link, useParams } from 'react-router-dom'
 import { styled } from 'styled-components';
+import ToggleButton from './ToggleButton';
 
 
 
@@ -11,6 +12,7 @@ export default function RightSide() {
   const {username} = useParams()
   return (
     <Container>
+                <ToggleButton/>
                 <div className="profil-text">
                     <p>Hey, <span className='username'>{username.toLowerCase()}</span></p>  
                     <p className='deconnect'>
@@ -30,6 +32,7 @@ const  Container = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap:50px;
 
 p{
 color: #747B91;
