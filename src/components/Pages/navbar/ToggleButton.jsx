@@ -2,15 +2,18 @@
 
 import { useState } from "react"
 import { styled } from "styled-components";
+import 'react-toastify/dist/ReactToastify.css';
+import { notify } from "../order/Toast";
 
 function ToggleButton() {
   const [isChecked, setIschecked] = useState(false)
 
   const handleClick = () =>{
     setIschecked(!isChecked)
-  }
- console.log(isChecked);
+    !isChecked? notify() : null // le composant <Toast/> a été mis dans <OrderPage/>
 
+  }
+ 
   return (
     
             <Container onClick={handleClick} checked={isChecked} >
@@ -20,6 +23,7 @@ function ToggleButton() {
                        {isChecked ? 'DÉSACTIVER LE MODE ADMIN' : 'ACTIVER LE MODE ADMIN'}  
                     </label>
                 </div>
+                
             </Container>
     
   )

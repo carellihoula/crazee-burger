@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { theme } from '../../../theme';
 import Navbar from '../navbar/Navbar';
 import Main from './Main';
-//import ButtonComponent from '../../ButtonComponent';
-
+import 'react-toastify/dist/ReactToastify.css';
+import { Toast } from './Toast';
 
 
 
@@ -20,14 +20,12 @@ function OrderPage() {
   return (
           
     <Container>
+
       <div className="sous-container">
             
                 <Navbar/>
-            
-            
                 <Main/>     
-            
-            
+                <Toast/>
       </div>
              
     </Container>

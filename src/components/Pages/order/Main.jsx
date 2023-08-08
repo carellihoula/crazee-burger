@@ -1,5 +1,5 @@
 //import React from 'react'
-import Panier from './Panier'
+//import Panier from './Panier'
 import CardList from './CardList'
 import { styled } from 'styled-components';
 
