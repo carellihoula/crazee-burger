@@ -12,7 +12,7 @@ function Panier() {
 export default Panier
 
 const Container= styled.div`
-width:50%;
+width:25%;
 height:100vh;
 border-radius: 0px 0px 0px 15px;
 background: #F5F5F7;

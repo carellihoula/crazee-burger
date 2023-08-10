@@ -7,6 +7,8 @@ import Navbar from '../navbar/Navbar';
 import Main from './Main';
 import 'react-toastify/dist/ReactToastify.css';
 import { Toast } from './Toast';
+import Admin from '../admin/Admin';
+//import Admin from '../admin/Admin';
 
 
 
@@ -22,10 +24,13 @@ function OrderPage() {
     <Container>
 
       <div className="sous-container">
-            
+          
                 <Navbar/>
-                <Main/>     
+                <Main/> 
+                  
                 <Toast/>
+           
+                
       </div>
              
     </Container>
@@ -43,23 +48,13 @@ const Container = styled.div`
     width:100%;
     height:100vh;
     .sous-container{
-    
-    padding:0;
     width: 80%;
     height: 94%;
     border-radius: 15px;
     background: #F00;
-    }
-    .main{
-    overflow-y: hidden;
-    width: 100%;
-    height: 100vh;
-    padding-top:0;
-    flex-shrink: 0;
-    border-radius: 0px 0px 15px 15px;
-    background: #F5F5F7;
-    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.20) inset;
     
     }
+    
+    
 `;
 

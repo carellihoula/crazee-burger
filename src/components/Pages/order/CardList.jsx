@@ -28,7 +28,9 @@ const Container = styled.div`
   display:flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin:50px 10px 60px 10px ;
   gap:40px;
-  /*height: 100vh;*/
+  margin-top:20px;
+  
+  
+  
 `;
