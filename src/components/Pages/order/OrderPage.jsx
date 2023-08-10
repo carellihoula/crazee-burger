@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { theme } from '../../../theme';
 import Navbar from '../navbar/Navbar';
 import Main from './Main';
+//import Admin from '../admin/Admin';
 //import ButtonComponent from '../../ButtonComponent';
 
 
@@ -24,8 +25,8 @@ function OrderPage() {
             
                 <Navbar/>
             
-            
-                <Main/>     
+                <Main/>  
+                 
             
             
       </div>
@@ -45,8 +46,6 @@ const Container = styled.div`
     width:100%;
     height:100vh;
     .sous-container{
-    
-    padding:0;
     width: 80%;
     height: 94%;
     border-radius: 15px;

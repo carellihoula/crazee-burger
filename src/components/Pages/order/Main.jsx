@@ -2,16 +2,17 @@
 import Panier from './Panier'
 import CardList from './CardList'
 import { styled } from 'styled-components';
+import Admin from '../admin/Admin';
 
 function Main() {
   return (
     <MainStyled>
-        <div>
-            <Panier/>
-        </div>
-        <div>
-           <CardList/>
-        </div>            
+
+            <ContentWrapper>
+                <CardList/>
+                <Admin/>  
+            </ContentWrapper>
+                          
     </MainStyled>
   )
 }
@@ -28,13 +29,12 @@ const MainStyled = styled.div`
     background: #F5F5F7;
     box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.20) inset;
     
-&::-webkit-scrollbar-thumb{
-    border-radius: 8px;
-    width:200px;
-}
-&::-webkit-scrollbar{
-    width:200px;
-}
+
 `;
+
+const ContentWrapper = styled.div`
+    
+
+`
 
 export default Main
