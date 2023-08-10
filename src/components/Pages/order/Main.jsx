@@ -41,7 +41,9 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 25px;
+  padding-top: 15px;
+ 
+  
 `;
 
 export default Main

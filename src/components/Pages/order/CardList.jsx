@@ -31,6 +31,7 @@ const Container = styled.div`
   box-sizing: border-box;
   gap: 35px;
   overflow-y: scroll;
-    scrollbar-width: thin;
-  
+  scrollbar-width: thin;
+  padding-bottom: 30px;
+  padding-top:20px;
 `;
