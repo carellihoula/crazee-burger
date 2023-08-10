@@ -25,10 +25,12 @@ function CardList() {
 export default CardList
 
 const Container = styled.div`
-  display:flex;
+  display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin:50px 10px 60px 10px ;
-  gap:40px;
-  /*height: 100vh;*/
+  box-sizing: border-box;
+  gap: 35px;
+  overflow-y: scroll;
+    scrollbar-width: thin;
+  
 `;

@@ -2,12 +2,19 @@
 //import Panier from './Panier'
 import CardList from './CardList'
 import { styled } from 'styled-components';
+import Panier from './Panier';
+import Admin from '../admin/Admin';
 
 function Main() {
   return (
     <MainStyled>
+           <Panier/>
+        
+           <ContentWrapper>
+                <CardList/> 
+                <Admin/>
+           </ContentWrapper>
            
-           <CardList/> 
                        
     </MainStyled>
   )
@@ -17,22 +24,24 @@ const MainStyled = styled.div`
     display:flex;
     flex-direction: row;
     justify-content: center;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    width: 100%;
-    height: 90%;
     
+    width: 100%;
+    flex:1;
+    height: 90%;
     flex-shrink: 0;
     border-radius: 0px 0px 15px 15px;
     background: #F5F5F7;
     box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.20) inset;
-    
-    
-&::-webkit-scrollbar-thumb{
-    border-radius: 8px;
-    width:200px;
-}
 
+`;
+
+const ContentWrapper = styled.div`
+  overflow: hidden; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px;
 `;
 
 export default Main
