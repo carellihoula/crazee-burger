@@ -83,7 +83,7 @@ line-height: 72px; /* 200% */
 }
 .sub-basket{
 max-height :  694px; 
-overflow-y: scroll;
+overflow-y: auto;
 scrollbar-width: thin;
 
 }
