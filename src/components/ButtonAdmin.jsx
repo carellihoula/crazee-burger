@@ -4,16 +4,15 @@ import { styled } from 'styled-components';
 export default function ButtonAdmin({label, icon:IconAdminButton, background, color}) {
   return (
     <Container back={background} color={color}>
-            <button> {IconAdminButton && <IconAdminButton/>} {label}</button>
+             {IconAdminButton && <IconAdminButton/>} {label}
     </Container>
       
       
   )
 }
 
-const  Container= styled.div`
+const  Container= styled.button`
 
-button{
 color: ${props=>props.color};
 text-align: center;
 font-family: 'Open Sans';
@@ -33,8 +32,8 @@ align-items: center;
 gap: 13.022px;
 
 //line-height: normal;
-}
-button:active{
+
+&:active{
   background-color: red;
 }
 

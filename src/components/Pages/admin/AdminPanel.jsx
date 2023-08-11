@@ -38,16 +38,13 @@ export default function AdminPanel() {
     const Container = styled.div`
     display: flex;
     flex-direction: row;
-    margin-top:31px;
+    //margin-top:31px;
     padding-top:30px;
     overflow: hidden;
     width: 100%;
     height: 250px;
-    position: absolute;
-    background-color: white;
-    bottom: 0;
-    left:0;
-    right:0;
+    background-color: #fff;
+    
 
     form{
         margin-left:30px;

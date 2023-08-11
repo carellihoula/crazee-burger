@@ -20,11 +20,6 @@ const ContainerTabs = styled.div`
   display:flex;
   flex-direction: row;
   gap: 1px;
-  position:absolute;
-  top:0;
-  right:0;
-  left:0;
-
   margin-left:71px;
   background: none;
   border-style: none;
