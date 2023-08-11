@@ -34,6 +34,10 @@ gap: 13.022px;
 
 //line-height: normal;
 }
+button:active{
+  background-color: red;
+}
+
 `
 
 ;
