@@ -1,15 +1,16 @@
-//import React from 'react'
-
-import { useState } from "react"
 import { styled } from "styled-components";
 import 'react-toastify/dist/ReactToastify.css';
 import { notify } from "../order/Toast";
+import { useDispatch, useSelector } from "react-redux";
+import {toggleButton as toggleButtonAction} from "../../../redux/actions";
 
-function ToggleButton() {
-  const [isChecked, setIschecked] = useState(false)
+export default function ToggleButton() {
+  const isChecked = useSelector(state=>state.toogBtn.isChecked);
+  const dispatch = useDispatch();
+  console.log(isChecked);
 
   const handleClick = () =>{
-    setIschecked(!isChecked)
+    dispatch(toggleButtonAction())
     !isChecked? notify() : null // le composant <Toast/> a été mis dans <OrderPage/>
 
   }
@@ -29,7 +30,21 @@ function ToggleButton() {
   )
 }
 
-export default ToggleButton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Container = styled.div`
 display:flex;

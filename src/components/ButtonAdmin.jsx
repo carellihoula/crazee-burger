@@ -1,9 +1,9 @@
 //import React from 'react'
 import { styled } from 'styled-components';
 
-export default function ButtonAdmin({label, icon:IconAdminButton, background, color}) {
+export default function ButtonAdmin({label, icon:IconAdminButton, background, color, onclick}) {
   return (
-    <Container back={background} color={color}>
+    <Container back={background} color={color} onClick={onclick}>
              {IconAdminButton && <IconAdminButton/>} {label}
     </Container>
       
@@ -30,12 +30,6 @@ padding: 10px 22px 11px 22px;
 justify-content: center;
 align-items: center;
 gap: 13.022px;
-
-//line-height: normal;
-
-&:active{
-  background-color: red;
-}
 
 `
 
