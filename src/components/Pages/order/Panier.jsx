@@ -30,7 +30,10 @@ function Panier() {
                         return (
                             <div className="basket-content">
                                {/*{ item.title} : {item.quantity}<button onClick={()=>handleclick(item.id)}>X</button>*/}
-                               <CardPanier title={item.title} image = {item.imageSource} price = {item.price} quantity = {item.quantity}/>     
+                               <CardPanier title={item.title} image = {item.imageSource} 
+                               price = {formatPrice(item.price)} quantity = {item.quantity}
+                               handleclickdelete = {()=>handleclick(item.id)}
+                               />     
                             </div>
                         )
                       })
