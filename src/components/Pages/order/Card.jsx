@@ -12,7 +12,7 @@ export default function Card(props) {
         
                 <div className="div-ajouter">
                     <p className="prix">{props.price} €</p>
-                    <ButtonComponent label="Ajouter" width="95px" height="38px"/>   
+                    <ButtonComponent label="Ajouter" width="95px" height="38px" onclick={props.handleClick}/>   
                 </div> 
     </Container>
   )

@@ -1,19 +1,29 @@
+import { useDispatch } from "react-redux";
 import { styled } from "styled-components";
-import Card from "./Card"
 import { fakeMenu1, fakeMenu2 } from "../../../assets/fakeData/fakeMenu";
-
+import { addToCart } from "../../../redux/actions";
 import { formatPrice } from "../../../utils/FormatPrice";
+import Card from "./Card";
 
 function CardList() {
+  //state
     const listFusion = [fakeMenu1, fakeMenu2];
-    const globalList = listFusion.flat()
+    const globalList = listFusion.flat();
+    const dispatch = useDispatch();
+    //const state = useSelector(state=>state.basket.panier);
+    //console.log(state);
+    //comportements
+    const handleAddToCart = (item)=>{
+          dispatch(addToCart(item))
+
+    }
 
   return (
     <Container>
             {
                 globalList.map((item, index)=>{
                     return(
-                        <Card key={index} title={item.title} image={item.imageSource} price={formatPrice(item.price)} />
+                        <Card key={index} title={item.title} image={item.imageSource} price={formatPrice(item.price)} handleClick = {()=>handleAddToCart(item)}/>
                     )
                 })
             }

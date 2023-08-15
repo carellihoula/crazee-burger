@@ -4,10 +4,10 @@ import { theme } from '../theme';
 
 
 
-export default function ButtonComponent({label, icon:Icon, width, height}) {
+export default function ButtonComponent({label, icon:Icon, width, height, onclick}) {
   return (
     
-        <Button width={width} height={height}>
+        <Button width={width} height={height} onClick={onclick}>
           {label} {Icon && <Icon/>}
         </Button>
     

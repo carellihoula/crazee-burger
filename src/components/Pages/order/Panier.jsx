@@ -1,17 +1,41 @@
+import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
+import { removeToCart } from "../../../redux/actions";
+import { formatPrice } from "../../../utils/FormatPrice";
+import CardPanier from "../panier/CardPanier";
 
 
 function Panier() {
+  const produits = useSelector(state=>state.basket.panier)
+
+  const prixTotalPanier =  formatPrice(produits.reduce((total, produit)=> total+ produit.price, 0))
+  
+  const dispatch = useDispatch();
+  //comportements
+  const handleclick = (productId) =>{
+    dispatch(removeToCart(productId))
+  }
   return (
     <Container>
         <div className="top">
             <div className="total-price">TOTAL</div> 
-            <div className="total-price">0.00 €</div>
+            <div className="total-price">{prixTotalPanier} €</div>
         </div>
 
         <div className="sub-basket">
             <div>
-                <p className="empty-order">Votre commande est vide.</p>
+                <p className="empty-order">
+                    {
+                      produits.map((item, index)=>{
+                        return (
+                            <div className="basket-content">
+                               {/*{ item.title} : {item.quantity}<button onClick={()=>handleclick(item.id)}>X</button>*/}
+                               <CardPanier title={item.title} image = {item.imageSource} price = {item.price} quantity = {item.quantity}/>     
+                            </div>
+                        )
+                      })
+                    }
+                </p>
             </div>
                 
         </div>
@@ -86,5 +110,10 @@ max-height :  694px;
 overflow-y: auto;
 scrollbar-width: thin;
 
+}
+.basket-content{
+  display:flex;
+  justify-content: center;
+ 
 }
 `;
