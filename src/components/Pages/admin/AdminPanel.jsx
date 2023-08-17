@@ -1,31 +1,85 @@
+import { useState } from 'react';
+import { FaEuroSign } from 'react-icons/fa';
+import { GiHamburger } from 'react-icons/gi';
+import { MdOutlinePhotoCamera } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
 import { styled } from "styled-components";
-import {GiHamburger} from 'react-icons/gi'
-import {MdOutlinePhotoCamera} from 'react-icons/md';
-import {FaEuroSign} from 'react-icons/fa';
-
+import { addToList } from '../../../redux/listeItems/actions';
 
 export default function AdminPanel() {
+    const dispatch = useDispatch()
+    const ourList = useSelector(state=>state.listItems.list)
+
+    const [form, setForm] = useState({
+        id : ourList.length-1,
+        imageSource : "",
+        title : "",
+        price : "",
+        quantity: 0,
+        isAvailable: true,
+        isAdvertised: false,
+    })
+
+    
+
+    const handleChange  = (e) => {
+        const {name, value} = e.target;
+            setForm((prevForm) =>({
+                ...prevForm,
+                [name] : value
+            }))
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        dispatch(addToList(form))
+        setForm({
+        id : ourList.length,
+        imageSource : "",
+        title : "",
+        price : "",
+        quantity: 0,
+        isAvailable: true,
+        isAdvertised: false,
+        })
+    }
+
     return (
         <Container>
                 <div className="image-part">
                        <image src="" alt="image"/>
                 </div>
                 <div>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                                 <div className="name-product">
                                       <label><GiHamburger color="grey"/></label>
-                                      <input type="text" placeholder="Nom du produit (ex: Super Burger)" className="input"/>
+                                      <input type="text" placeholder="Nom du produit (ex: Super Burger)" 
+                                      className="input"
+                                      name  = "title"
+                                      value={form.title}
+                                      onChange={handleChange}
+                                      />
                                 </div>
                                 <div className="name-product">
                                       <label><MdOutlinePhotoCamera color="grey"/></label>
-                                      <input type="text" placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)" className="input"/>
+                                      <input type="text" placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)" 
+                                      className="input"
+                                      name  = "imageSource"
+                                      value={form.imageSource}
+                                      onChange={handleChange}
+                                      />
                                 </div>
                                 <div className="name-product">
                                       <label><FaEuroSign color="grey"/></label>
-                                      <input type="text" placeholder="Prix" className="input"/>
+                                      <input type="text" placeholder="Prix" 
+                                      className="input"
+                                      name="price"
+                                      value={form.price}
+                                      onChange={handleChange}
+                                      />
                                 </div>
                                 <div className="button-submit">
-                                      <button className="button-submit">
+                                      <button className="button-submit" type="submit">
                                             Ajouter un nouveau produit au menu
                                       </button>
                                 </div>     

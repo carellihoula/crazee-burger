@@ -1,10 +1,16 @@
+import { TiDelete } from "react-icons/ti";
+import { useSelector } from "react-redux";
 import { styled } from "styled-components";
 import ButtonComponent from "../../ButtonComponent";
 
+
 export default function Card(props) {
+  const isChecked = useSelector(state=>state.toogBtn.isChecked);
+ 
   return (
     <Container>
-            
+                {isChecked && <TiDelete onClick={props.handledelete}/>}
+                
                 <img src={props.image} title={props.title}/>
                 <div>
                    <h1 className="title">{props.title}</h1>

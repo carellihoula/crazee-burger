@@ -1,13 +1,13 @@
-import { styled } from "styled-components";
-import 'react-toastify/dist/ReactToastify.css';
-import { notify } from "../order/Toast";
 import { useDispatch, useSelector } from "react-redux";
-import {toggleButton as toggleButtonAction} from "../../../redux/actions";
+import 'react-toastify/dist/ReactToastify.css';
+import { styled } from "styled-components";
+import { toggleButton as toggleButtonAction } from "../../../redux/actions";
+import { notify } from "../order/Toast";
 
 export default function ToggleButton() {
   const isChecked = useSelector(state=>state.toogBtn.isChecked);
   const dispatch = useDispatch();
-  console.log(isChecked);
+  //console.log(isChecked);
 
   const handleClick = () =>{
     dispatch(toggleButtonAction())

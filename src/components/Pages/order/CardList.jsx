@@ -1,34 +1,35 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
-import { fakeMenu1, fakeMenu2 } from "../../../assets/fakeData/fakeMenu";
 import { addToCart } from "../../../redux/actions";
+import { removeToList } from "../../../redux/listeItems/actions";
 import { formatPrice } from "../../../utils/FormatPrice";
 import Card from "./Card";
 
 function CardList() {
   //state
-    const listFusion = [...fakeMenu1, ...fakeMenu2];
-    const globalList = listFusion.flat();
-    const [list, setList]  = useState([...globalList])
-    
-    const dispatch = useDispatch();
-    //const state = useSelector(state=>state.basket.panier);
-    //console.log(state);
-    //comportements
+  const menuItems = useSelector(state=>state.listItems.list)
+  //const produits = useSelector(state=>state.basket.panier)
+  const dispatch = useDispatch()
+  
     const handleAddToCart = (item)=>{
           dispatch(addToCart(item))
-          //setList((prevList) => [...prevList, item])
-          //console.log(list)
-
     }
+
+    const handleDeleteItem  = (item) => {
+          dispatch(removeToList(item))
+          //alert("item removed")
+    } 
 
   return (
     <Container>
             {
-                list.map((item, index)=>{
+              menuItems.map((item, index)=>{
                     return(
-                        <Card key={index} title={item.title} image={item.imageSource} price={formatPrice(item.price)} handleClick = {()=>handleAddToCart(item)}/>
+                        <Card key={index} title={item.title} image={item.imageSource} 
+                        price={formatPrice(item.price)} 
+                        handleClick = {()=>handleAddToCart(item)}
+                        handledelete = {()=>handleDeleteItem(item.id)}
+                        />
                     )
                 })
             }
