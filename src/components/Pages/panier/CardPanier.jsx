@@ -28,10 +28,10 @@ const Container = styled.div`
   display : flex;
   flex-direction: row;
   align-items : center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 5px;
   width:90%;
-  height:10%;
+  height:15%;
   background: #FFF;
   
   box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.20);
@@ -58,7 +58,7 @@ const Container = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    //max-width: 100px;
+    max-width: 100px;
   }
   .price{
     color: #FFA01B;
