@@ -1,8 +1,12 @@
 import React from 'react';
 import { HiMinusSm, HiPlusSm } from 'react-icons/hi';
 import { TiDelete } from 'react-icons/ti';
+//import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
+
 export default function CardPanier(props) {
+
+  
   return (
     <Container>
                                {/*{ item.title} : {item.quantity}<button onClick={()=>handleclick(item.id)}>X</button>*/}
@@ -15,9 +19,9 @@ export default function CardPanier(props) {
                 <p className='price'>{props.price}€</p>
             </div>
             <div className='qty'>
-                <HiPlusSm/>
+                <HiPlusSm onClick={props.handleplus} style = {{cursor : "pointer"}}/>               
                 <p>{props.quantity}</p>
-                <HiMinusSm onClick={()=>console.log("ddd")}/>
+                <HiMinusSm onClick={props.handleminus} style ={{cursor : "pointer"}}/>
             </div>
             <div className='delete' ><TiDelete onClick={props.handleclickdelete}/></div>
     </Container>
@@ -33,6 +37,7 @@ const Container = styled.div`
   width:90%;
   height:15%;
   background: #FFF;
+ 
   
   box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.20);
   margin : 10px 0px 10px 0px;

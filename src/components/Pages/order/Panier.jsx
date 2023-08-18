@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
 import { removeToCart } from "../../../redux/actions";
+//import increaseQty from "../../../redux/actions.quantity";
+import { increaseQty, minusQty } from "../../../redux/actions.quantity";
 import { formatPrice } from "../../../utils/FormatPrice";
 import CardPanier from "../panier/CardPanier";
 
@@ -8,13 +10,21 @@ import CardPanier from "../panier/CardPanier";
 function Panier() {
   const produits = useSelector(state=>state.basket.panier)
 
-  const prixTotalPanier =  formatPrice(produits.reduce((total, produit)=> total+ produit.price, 0))
+  const prixTotalPanier =  formatPrice(produits.reduce((total, product)=> total+ product.price, 0))
   
   const dispatch = useDispatch();
   //comportements
   const handleclick = (productId) =>{
     dispatch(removeToCart(productId))
   }
+
+  const handlePlus = (product) =>{
+    dispatch(increaseQty(product))
+  }
+  const handleMinus = (product) =>{
+    dispatch(minusQty(product))
+  }
+
   return (
     <Container>
         <div className="top">
@@ -28,11 +38,14 @@ function Panier() {
                     {
                       produits.map((item, index)=>{
                         return (
-                            <div className="basket-content">
+                            <div className="basket-content" key={index}>
                                {/*{ item.title} : {item.quantity}<button onClick={()=>handleclick(item.id)}>X</button>*/}
                                <CardPanier title={item.title} image = {item.imageSource} 
                                price = {formatPrice(item.price)} quantity = {item.quantity}
                                handleclickdelete = {()=>handleclick(item.id)}
+                               handleplus = {()=>handlePlus(item.id)}
+                               handleminus = {()=>handleMinus(item.id)}
+                               
                                />     
                             </div>
                         )
