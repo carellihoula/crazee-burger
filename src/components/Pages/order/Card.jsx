@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { TiDelete } from "react-icons/ti";
 import { useSelector } from "react-redux";
 import { styled } from "styled-components";
@@ -6,9 +7,13 @@ import ButtonComponent from "../../ButtonComponent";
 
 export default function Card(props) {
   const isChecked = useSelector(state=>state.toogBtn.isChecked);
- 
+  const [click, setClick] = useState(false)
+  
+  const handleToggle =() =>{
+    isChecked && setClick(!click)
+  }
   return (
-    <Container>
+    <Container ischecked={isChecked} onClick={handleToggle} isccolorback={click}>
                 {isChecked && <TiDelete onClick={props.handledelete}/>}
                 
                 <img src={props.image} title={props.title}/>
@@ -37,8 +42,18 @@ justify-content: center;
 align-items: center;
 gap: 15px;
 border-radius: 15px;
-background: #FFF;
+background:${({isccolorback})=>isccolorback ? '#FF9A23':'#FFF'};
 box-shadow: -8px 8px 20px 0px rgba(0, 0, 0, 0.20);
+&:hover{
+${({ischecked}) =>
+ischecked && 
+`box-shadow: 0px 0px 8px 0px #FF9A23;
+ transform : scale(1.05);
+ transition : transform 0.5s ease;
+ cursor:pointer;
+`}
+}
+
 
 img{
 width: 200px;

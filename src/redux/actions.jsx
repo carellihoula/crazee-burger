@@ -8,6 +8,8 @@ export const ADD_TO_CART = "ADD_TO_CART";
 
 export const REMOVE_TO_CART = "REMOVE_TO_CART";
 
+export const SELECT_MENU = "SELECT_MENU"
+
 export function toggleButton() {
   return {
     type : TOOGLE_BUTTON
@@ -31,5 +33,11 @@ export function removeToCart(produitId){
   return{
     type : REMOVE_TO_CART,
     payload : produitId
+  }
+}
+export function selectMenu(menu){
+  return{
+    type : SELECT_MENU,
+    payload:menu
   }
 }

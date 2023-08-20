@@ -27,6 +27,7 @@ function CardList() {
                     return(
                         <Card key={index} title={item.title} image={item.imageSource} 
                         price={formatPrice(item.price)} 
+                        indexf={item.id}
                         handleClick = {()=>handleAddToCart(item)}
                         handledelete = {()=>handleDeleteItem(item.id)}
                         />

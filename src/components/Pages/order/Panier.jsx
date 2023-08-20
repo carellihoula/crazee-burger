@@ -4,6 +4,7 @@ import { removeToCart } from "../../../redux/actions";
 //import increaseQty from "../../../redux/actions.quantity";
 import { increaseQty, minusQty } from "../../../redux/actions.quantity";
 import { formatPrice } from "../../../utils/FormatPrice";
+import ButtonComponent from "../../ButtonComponent";
 import CardPanier from "../panier/CardPanier";
 
 
@@ -31,7 +32,9 @@ function Panier() {
             <div className="total-price">TOTAL</div> 
             <div className="total-price">{prixTotalPanier} €</div>
         </div>
-
+       
+            <span className="delete"><ButtonComponent label="Payer" width="95px" height="38px" /></span>
+       
         <div className="sub-basket">
             <div>
                 <p className="empty-order">
@@ -131,5 +134,11 @@ scrollbar-width: thin;
   display:flex;
   justify-content: center;
  
+}
+.delete{
+  display : flex;
+  justify-content: center;
+  margin-top: 15px;
+  
 }
 `;

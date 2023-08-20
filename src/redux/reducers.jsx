@@ -1,8 +1,9 @@
-import { TOOGLE_BUTTON, CHEVRON_BUTTON } from "./actions"
+import { CHEVRON_BUTTON, SELECT_MENU, TOOGLE_BUTTON } from "./actions"
 
 const initialState = {
  isChecked : false,
- isClicked : false   
+ isClicked : false,
+ selectedMenu : 'ajouter',   
 }
 
 export const buttonReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ export const buttonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isClicked : !state.isClicked
+            }
+        case SELECT_MENU:
+            return{
+                ...state,
+                selectedMenu : action.payload
             }
         default:
             return state
