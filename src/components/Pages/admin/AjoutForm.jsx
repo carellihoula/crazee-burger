@@ -109,7 +109,7 @@ export default function AjoutForm() {
     width: 100%;
     height: 250px;
     background-color: #fff;
-    
+   
 
     form{
         margin-left:30px;

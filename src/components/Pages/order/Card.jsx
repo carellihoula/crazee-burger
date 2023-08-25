@@ -9,12 +9,13 @@ export default function Card(props) {
   const isChecked = useSelector(state=>state.toogBtn.isChecked);
   const [click, setClick] = useState(false)
   
+  
   const handleToggle =() =>{
     isChecked && setClick(!click)
   }
   return (
     <Container ischecked={isChecked} onClick={handleToggle} isccolorback={click}>
-                {isChecked && <TiDelete onClick={props.handledelete}/>}
+                {isChecked && <TiDelete onClick={props.handledelete} size={35} className="deleteIcon"/>}
                 
                 <img src={props.image} title={props.title}/>
                 <div>
@@ -34,15 +35,15 @@ export default function Card(props) {
 //--------------------------------------===> css
 const Container = styled.div`
 display: flex;
-width: 240px;
-height:330px;
+width: 190px;
+height:280px;
 padding: 50px 20px 10px 20px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 15px;
 border-radius: 15px;
-background:${({isccolorback})=>isccolorback ? '#FF9A23':'#FFF'};
+background:#FFF;
 box-shadow: -8px 8px 20px 0px rgba(0, 0, 0, 0.20);
 &:hover{
 ${({ischecked}) =>
@@ -51,6 +52,7 @@ ischecked &&
  transform : scale(1.05);
  transition : transform 0.5s ease;
  cursor:pointer;
+ 
 `}
 }
 
@@ -91,6 +93,20 @@ white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 max-width: 200px;
+}
+.deleteIcon{
+  display:flex;
+  flex-direction:column;
+  align-self: flex-end;
+  margin-top:-50px;
+  margin-right: -15px;
+  justify-content:flex-start;
+  color : #FFA01B;
+  
+}
+.deleteIcon:hover{
+ color: red;
+  
 }
 
 `;

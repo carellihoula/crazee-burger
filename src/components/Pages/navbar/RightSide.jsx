@@ -1,7 +1,7 @@
-import Icon from '../../Icon';
 import { BsPersonCircle } from 'react-icons/bs';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom';
 import { styled } from 'styled-components';
+import Icon from '../../Icon';
 import ToggleButton from './ToggleButton';
 
 
@@ -32,7 +32,7 @@ const  Container = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap:50px;
+    gap:20px;
 
 p{
 color: #747B91;

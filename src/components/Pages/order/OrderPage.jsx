@@ -1,11 +1,11 @@
 //import React from 'react'
 
 //import LoginPage from '../login/LoginPage';
+import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
-import { theme } from '../../../theme';
+import back from '../../../assets/back.jpg';
 import Navbar from '../navbar/Navbar';
 import Main from './Main';
-import 'react-toastify/dist/ReactToastify.css';
 import { Toast } from './Toast';
 
 
@@ -39,7 +39,11 @@ const Container = styled.div`
     display : flex;
     justify-content: center;
     align-items: center;
-    background: ${theme.colors.primary};
+    background-image: url(${back}) ;
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position: center;
+
     width:100%;
     height:100vh;
     .sous-container{

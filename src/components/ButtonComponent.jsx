@@ -4,7 +4,7 @@ import { theme } from '../theme';
 
 
 
-export default function ButtonComponent({label, icon:Icon, width, height, onclick}) {
+export default function ButtonComponent({label, icon:Icon, width, height, onclick,color}) {
   return (
     
         <Button width={width} height={height} onClick={onclick}>
