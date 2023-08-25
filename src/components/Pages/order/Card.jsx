@@ -14,7 +14,7 @@ export default function Card(props) {
     isChecked && setClick(!click)
   }
   return (
-    <Container ischecked={isChecked} onClick={handleToggle} isccolorback={click}>
+    <Container ischecked={isChecked} onClick={props.handleclickadd} isccolorback={click}>
                 {isChecked && <TiDelete onClick={props.handledelete} size={35} className="deleteIcon"/>}
                 
                 <img src={props.image} title={props.title}/>

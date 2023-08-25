@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
 import { addToCart } from "../../../redux/actions";
-import { removeToList } from "../../../redux/listeItems/actions";
+import { removeToList, selectedItem } from "../../../redux/listeItems/actions";
 import { formatPrice } from "../../../utils/FormatPrice";
 import Card from "./Card";
 
 function CardList() {
   //state
   const menuItems = useSelector(state=>state.listItems.list)
-  //const produits = useSelector(state=>state.basket.panier)
+ 
   const dispatch = useDispatch()
   
     const handleAddToCart = (item)=>{
@@ -20,6 +20,11 @@ function CardList() {
           //alert("item removed")
     } 
 
+    const handleClickCard = (item)=>{
+        dispatch(selectedItem(item))
+       
+    }
+
   return (
     <Container>
             {
@@ -27,9 +32,10 @@ function CardList() {
                     return(
                         <Card key={index} title={item.title} image={item.imageSource} 
                         price={formatPrice(item.price)} 
-                        indexf={item.id}
                         handleClick = {()=>handleAddToCart(item)}
-                        handledelete = {()=>handleDeleteItem(item.id)}
+                        handledelete = {()=>handleDeleteItem(item)}
+                        handleclickadd = {()=>handleClickCard(item)}
+                        
                         />
                     )
                 })

@@ -4,13 +4,18 @@ import { GiHamburger } from 'react-icons/gi';
 import { MdOutlinePhotoCamera } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { styled } from "styled-components";
-import { addToList } from '../../../redux/listeItems/actions';
+import { editedItem } from '../../../redux/listeItems/actions';
 
 export default function UpdateForm() {
     const dispatch = useDispatch()
-    const ourList = useSelector(state=>state.listItems.list)
 
-    const [form, setForm] = useState({
+    const selected = useSelector(state=>state.listItems.selected)
+
+    const [updateItem, setUpdateItem] = useState({...selected})
+
+    
+    console.log(selected);
+   {/*const [form, setForm] = useState({
         id : ourList.length-1,
         imageSource : "",
         title : "",
@@ -18,31 +23,25 @@ export default function UpdateForm() {
         quantity: 0,
         isAvailable: true,
         isAdvertised: false,
-    })
+    }) */}
 
     const [message, setMessage]  = useState("")
-
     const handleChange  = (e) => {
         const {name, value} = e.target;
-            setForm((prevForm) =>({
-                ...prevForm,
+        setUpdateItem({
+                ...updateItem,
                 [name] : value
-            }))
+        })
+        
     }
+    
+
+    
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        dispatch(addToList(form))
-        setForm({
-        id : ourList.length,
-        imageSource : "",
-        title : "",
-        price : "",
-        quantity: 0,
-        isAvailable: true,
-        isAdvertised: false,
-        })
-        setMessage("produit ajouté avec succès");
+        dispatch(editedItem(updateItem))
+        setMessage("produit modifié avec succès");
         
     }
     useEffect(()=>{
@@ -52,12 +51,16 @@ export default function UpdateForm() {
 
         return() => clearTimeout(messageTimer)
     },[message])
+    
+    useEffect(() => {
+        setUpdateItem({ ...selected });
+      }, [selected]);
 
     return (
         <Container>
                 
                 <div className="image-part">
-                       <image src="" alt="image"/>
+                       <img src={updateItem.imageSource} alt={updateItem.title} width="215px" height="120px"/>
                 </div>
                 <div>
                     <form onSubmit={handleSubmit}>
@@ -66,7 +69,7 @@ export default function UpdateForm() {
                                       <input type="text" placeholder="Nom du produit (ex: Super Burger)" 
                                       className="input"
                                       name  = "title"
-                                      value={form.title}
+                                      value={updateItem.title}
                                       onChange={handleChange}
                                       />
                                 </div>
@@ -75,7 +78,7 @@ export default function UpdateForm() {
                                       <input type="text" placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)" 
                                       className="input"
                                       name  = "imageSource"
-                                      value={form.imageSource}
+                                      value={updateItem.imageSource}
                                       onChange={handleChange}
                                       />
                                 </div>
@@ -84,13 +87,13 @@ export default function UpdateForm() {
                                       <input type="text" placeholder="Prix" 
                                       className="input"
                                       name="price"
-                                      value={form.price}
+                                      value={updateItem.price}
                                       onChange={handleChange}
                                       />
                                 </div>
                                 <div className="button-submit">
                                       <button className="button-submit" type="submit">
-                                            Ajouter un nouveau produit au menu
+                                            Modifier un produit au menu
                                       </button>
                                       
                                 </div> 
