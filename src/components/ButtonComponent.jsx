@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { theme } from '../theme';
 
 
 
 
-export default function ButtonComponent({label, icon:Icon, width, height, onclick,color}) {
+export default function ButtonComponent({label, icon:Icon, width, height, onclick,color, isSelected}) {
   return (
     
-        <Button width={width} height={height} onClick={onclick}>
+        <Button width={width} height={height} onClick={onclick} isSelected = {isSelected}>
           {label} {Icon && <Icon/>}
         </Button>
     
@@ -26,9 +25,8 @@ const Button = styled.button`
     justify-content: center;
     align-items: center;
     border: 1px solid #FF9F1B;
-    background: ${theme.colors.primary_burger};
-    background: #FF9F1B;
-    color: #FFF;
+    background: ${props => props.isSelected? "#FFF" : "#ffa01b"};
+    color: ${props => props.isSelected? "#ffa01b" : "#FFF"};
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 15px;
@@ -40,8 +38,9 @@ const Button = styled.button`
     box-sizing: border-box;
     
     &:hover{
-  background: ${theme.colors.white};
-  color: #FF9F1B;
+  background: ${props => props.isSelected? "#ffa01b" : "#FFF"};
+  color: ${props => props.isSelected? "#FFF" : "#ffa01b"};
+  border: 1px solid ${props => props.isSelected? "#FFF" : "#ffa01b"};
 
 }
     

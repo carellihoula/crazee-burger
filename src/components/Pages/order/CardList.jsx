@@ -8,7 +8,7 @@ import Card from "./Card";
 function CardList() {
   //state
   const menuItems = useSelector(state=>state.listItems.list)
- 
+  const selected = useSelector(state=>state.listItems.selected)
   const dispatch = useDispatch()
   
     const handleAddToCart = (item)=>{
@@ -35,6 +35,7 @@ function CardList() {
                         handleClick = {()=>handleAddToCart(item)}
                         handledelete = {()=>handleDeleteItem(item)}
                         handleclickadd = {()=>handleClickCard(item)}
+                        isSelected  = {item.id == selected.id}
                         
                         />
                     )

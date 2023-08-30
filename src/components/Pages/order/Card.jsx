@@ -7,14 +7,16 @@ import ButtonComponent from "../../ButtonComponent";
 
 export default function Card(props) {
   const isChecked = useSelector(state=>state.toogBtn.isChecked);
-  const [click, setClick] = useState(false)
+  const [click, setClick] = useState(false) 
   
   
   const handleToggle =() =>{
     isChecked && setClick(!click)
   }
   return (
-    <Container ischecked={isChecked} onClick={props.handleclickadd} isccolorback={click}>
+    <Container ischecked={isChecked} onClick={props.handleclickadd} 
+    isccolorback={click} isSelected = {props.isSelected}
+    >
                 {isChecked && <TiDelete onClick={props.handledelete} size={35} className="deleteIcon"/>}
                 
                 <img src={props.image} title={props.title}/>
@@ -24,7 +26,10 @@ export default function Card(props) {
         
                 <div className="div-ajouter">
                     <p className="prix">{props.price} €</p>
-                    <ButtonComponent label="Ajouter" width="95px" height="38px" onclick={props.handleClick}/>   
+                    
+                    <ButtonComponent label="Ajouter" width="95px" height="38px" 
+                    onclick={props.handleClick} isSelected={props.isSelected}
+                    />   
                 </div> 
     </Container>
   )
@@ -43,17 +48,10 @@ justify-content: center;
 align-items: center;
 gap: 15px;
 border-radius: 15px;
-background:#FFF;
+background:${({isSelected})=>isSelected ? "#ffa01b" : "#ffffff"};
 box-shadow: -8px 8px 20px 0px rgba(0, 0, 0, 0.20);
 &:hover{
-${({ischecked}) =>
-ischecked && 
-`box-shadow: 0px 0px 8px 0px #FF9A23;
- transform : scale(1.05);
- transition : transform 0.5s ease;
- cursor:pointer;
- 
-`}
+
 }
 
 
@@ -74,7 +72,7 @@ height: 145px;
     
 }
 .prix{
-color: #FFA01B;
+color: ${({isSelected})=>isSelected ? "#ffffff" : "#ffa01b"};
 font-family: 'Open Sans';
 font-size: 16px;
 font-style: normal;
@@ -101,7 +99,7 @@ max-width: 200px;
   margin-top:-50px;
   margin-right: -15px;
   justify-content:flex-start;
-  color : #FFA01B;
+  color : ${({isSelected})=>isSelected ? "#ffffff" : "#ffa01b"};
   
 }
 .deleteIcon:hover{
