@@ -1,9 +1,9 @@
 import { globalList } from "../../utils/list";
-import { ADD_TO_LIST, EDIT_ITEM, REMOVE_TO_LIST, SELECT_ITEM } from "./actions";
+import { ADD_TO_LIST, CLEAR_SELECTED, EDIT_ITEM, REMOVE_TO_LIST, RESET_LIST, SELECT_ITEM } from "./actions";
 
 const initialState = {
     list : [...globalList],
-    selected :null ,
+    selected :{} ,
 };
 
 export default function reducerList(state = initialState, action){
@@ -31,10 +31,18 @@ export default function reducerList(state = initialState, action){
     return{
       ...state,
       list : updatedList,
-      
-
     }
-  default:
+ case RESET_LIST : 
+      return{
+        ...state,
+        list : [...globalList],
+      }
+ case CLEAR_SELECTED:
+      return{
+        ...state,
+        selected: {}
+      };    
+ default:
     return state
   }
 };

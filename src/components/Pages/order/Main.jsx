@@ -1,17 +1,20 @@
 //import React from 'react'
 //import Panier from './Panier'
-import CardList from './CardList'
+import { useSelector } from 'react-redux';
 import { styled } from 'styled-components';
-import Panier from './Panier';
 import Admin from '../admin/Admin';
+import CardList from './CardList';
+import EmpyListComponent from './EmpyListComponent';
+import Panier from './Panier';
 
 function Main() {
+  const menuItems = useSelector(state=>state.listItems.list)
   return (
     <MainStyled>
            <Panier/>
         
            <ContentWrapper>
-                <CardList/> 
+                {menuItems.length === 0 ? <EmpyListComponent/> : <CardList/> }
                 <Admin/>
            </ContentWrapper>
            
