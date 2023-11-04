@@ -17,6 +17,7 @@ function CardList() {
 
     const handleDeleteItem  = (item) => {
           dispatch(removeToList(item))
+          //dispatch(clearSelected())
           //alert("item removed")
     } 
 

@@ -25,7 +25,7 @@ function Panier() {
   const handleMinus = (product) =>{
     dispatch(minusQty(product))
   }
-
+ 
   return (
     <Container>
         <div className="top">

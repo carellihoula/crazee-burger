@@ -5,7 +5,7 @@ import { TiDelete } from 'react-icons/ti';
 import { styled } from 'styled-components';
 
 export default function CardPanier(props) {
-
+  
   
   return (
     <Container>
@@ -43,6 +43,8 @@ const Container = styled.div`
   margin : 10px 0px 10px 0px;
   padding :  0px 10px 0px 10px;
   gap : 5px;
+  //transform : translateX(${({a})=>a ? '100%' : '0'});
+  //transition : transform 0.5s ease-in-out;
   img{
     width: 70px;
     height: 50px;

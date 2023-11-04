@@ -50,6 +50,7 @@ gap: 15px;
 border-radius: 15px;
 background:${({isSelected})=>isSelected ? "#ffa01b" : "#ffffff"};
 box-shadow: -8px 8px 20px 0px rgba(0, 0, 0, 0.20);
+cursor : pointer;
 &:hover{
 
 }

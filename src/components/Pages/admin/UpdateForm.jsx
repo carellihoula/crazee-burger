@@ -41,6 +41,7 @@ export default function UpdateForm() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         dispatch(editedItem(updateItem))
+        //dispatch(clearSelected())
         setMessage("produit modifié avec succès");
         
     }
