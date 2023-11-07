@@ -33,7 +33,7 @@ const Container = styled.div`
              translateY(${({ isclicked }) => (isclicked ? '0' : '86.6%')});
 
   transition: transform ${({ ischecked }) => (ischecked ? '0.5s' : '0.0s')} ease,
-              transform ${({ isclicked }) => (isclicked ? '0.0s' : '0.0s')} ease;
+              transform ${({ isclicked }) => (isclicked ? '0.5s' : '0.5s')} ease;
   flex-direction: column;
   justify-content: flex-start;
   position: absolute;

@@ -15,6 +15,10 @@ export default function AdmnTabs({handleclick}) {
   const icon  = isClicked ? FiChevronDown : FiChevronUp
   const backGround = isClicked ? '#FFF' : '#292729'
   const color  = isClicked ? '#93A2B1' : '#FFF'
+  const colorButtonAdd = selectedMenu==='ajouter'?'#FFF':'#93A2B1'
+  const backgroundButtonAdd = selectedMenu==='ajouter'?'#292729':'white'
+  const colorButtonModify = selectedMenu==='modifier'?'#FFF':'#93A2B1'
+  const backgroundButtonModify = selectedMenu==='modifier'?'#292729':'white'
   
   //const [selectedMenu, setSelectedMenu] = useState('')
   //comportements
@@ -23,10 +27,7 @@ export default function AdmnTabs({handleclick}) {
       dispatch(selectMenu(menu))
       
   }
-  const colorButtonAdd = selectedMenu==='ajouter'?'#FFF':'#93A2B1'
-  const backgroundButtonAdd = selectedMenu==='ajouter'?'#292729':'white'
-  const colorButtonModify = selectedMenu==='modifier'?'#FFF':'#93A2B1'
-  const backgroundButtonModify = selectedMenu==='modifier'?'#292729':'white'
+ 
   return (
     <ContainerTabs>
             

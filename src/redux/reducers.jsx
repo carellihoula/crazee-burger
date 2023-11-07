@@ -1,4 +1,4 @@
-import { CHEVRON_BUTTON, SELECT_MENU, TOOGLE_BUTTON } from "./actions"
+import { CHEVRON_BUTTON, SELECT_MENU, TOOGLE_BUTTON, CHEVRON_BUTTON_TO_TRUE } from "./actions"
 
 const initialState = {
  isChecked : false,
@@ -19,6 +19,11 @@ export const buttonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isClicked : !state.isClicked
+            }
+        case CHEVRON_BUTTON_TO_TRUE:
+            return {
+                ...state,
+                isClicked : true
             }
         case SELECT_MENU:
             return{

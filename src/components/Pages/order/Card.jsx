@@ -10,7 +10,7 @@ export default function Card(props) {
   const [click, setClick] = useState(false) 
   
   return (
-    <Container isChecked={isChecked} onClick={props.handleclickadd} 
+    <Container isChecked={isChecked} onClick={props.handleclick} 
     isccolorback={click} isSelected = {props.isSelected}
     >
                 {isChecked && <TiDelete onClick={props.handledelete} size={35} className="deleteIcon"/>}
@@ -24,7 +24,7 @@ export default function Card(props) {
                     <p className="prix">{props.price} €</p>
                     
                     <ButtonComponent label="Ajouter" width="95px" height="38px" 
-                    onclick={props.handleClick} isSelected={props.isSelected}
+                    onclick={props.handleClickadd} isSelected={props.isSelected}
                     />   
                 </div> 
     </Container>
