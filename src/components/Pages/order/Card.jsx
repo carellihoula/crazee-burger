@@ -9,12 +9,8 @@ export default function Card(props) {
   const isChecked = useSelector(state=>state.toogBtn.isChecked);
   const [click, setClick] = useState(false) 
   
-  
-  const handleToggle =() =>{
-    isChecked && setClick(!click)
-  }
   return (
-    <Container ischecked={isChecked} onClick={props.handleclickadd} 
+    <Container isChecked={isChecked} onClick={props.handleclickadd} 
     isccolorback={click} isSelected = {props.isSelected}
     >
                 {isChecked && <TiDelete onClick={props.handledelete} size={35} className="deleteIcon"/>}
@@ -35,22 +31,22 @@ export default function Card(props) {
   )
 }
 
-
+//si le produit est selectionné et qu'on est en mode admin => tu fais ceci : ou sinon  (isSelected && isChecked)
 
 //--------------------------------------===> css
 const Container = styled.div`
 display: flex;
 width: 190px;
-height:280px;
+height:270px;
 padding: 50px 20px 10px 20px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 15px;
 border-radius: 15px;
-background:${({isSelected})=>isSelected ? "#ffa01b" : "#ffffff"};
+background:${props=>props.isSelected && props.isChecked ? "#ffa01b" : "#ffffff"};
 box-shadow: -8px 8px 20px 0px rgba(0, 0, 0, 0.20);
-cursor : pointer;
+cursor : ${props=>props.isChecked ? 'pointer':'default'};
 &:hover{
 
 }
@@ -73,7 +69,7 @@ height: 145px;
     
 }
 .prix{
-color: ${({isSelected})=>isSelected ? "#ffffff" : "#ffa01b"};
+color: ${props=>props.isSelected && props.isChecked ?  "#ffffff" : "#ffa01b"};
 font-family: 'Open Sans';
 font-size: 16px;
 font-style: normal;
@@ -100,7 +96,7 @@ max-width: 200px;
   margin-top:-50px;
   margin-right: -15px;
   justify-content:flex-start;
-  color : ${({isSelected})=>isSelected ? "#ffffff" : "#ffa01b"};
+  color : ${props=>props.isSelected && props.isChecked ?  "#ffffff" : "#ffa01b"};
   
 }
 .deleteIcon:hover{

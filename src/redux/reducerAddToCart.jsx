@@ -1,8 +1,10 @@
-import { ADD_TO_CART, REMOVE_TO_CART } from "./actions";
+import { ADD_TO_CART, BASKET_EMPTY, BASKET_PAIEMENT, REMOVE_TO_CART } from "./actions";
 import { INCREASE_QTY, MINUS_QTY } from "./actions.quantity";
 
 const initialState = {
- panier : [],  
+ panier : [],
+ message:'',
+ isPaid :  false
 }
 
 export const reducerAddToCart = (state = initialState, action) => {
@@ -70,7 +72,19 @@ export const reducerAddToCart = (state = initialState, action) => {
 
                 })
             }
-
+        case BASKET_EMPTY:
+            return {
+                ...state,
+                panier:[]
+                
+            }
+        case BASKET_PAIEMENT:
+            return{
+                ...state,
+                panier:[],
+                message:"Votre commande est prise en compte",
+                isPaid:true
+            }
         default:
             return state
     }
