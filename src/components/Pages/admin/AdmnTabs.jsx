@@ -23,7 +23,6 @@ export default function AdmnTabs({handleclick}) {
   //const [selectedMenu, setSelectedMenu] = useState('')
   //comportements
   const handleClickAdd = (menu) =>{
-      //setSelectedMenu(menu)
       dispatch(selectMenu(menu))
       
   }
@@ -42,7 +41,7 @@ export default function AdmnTabs({handleclick}) {
             />
             
           
-                <ButtonAdmin label="Modifier un produit" icon={MdModeEditOutline} background={backgroundButtonModify } 
+                <ButtonAdmin label="Modifier un produit" icon={MdModeEditOutline} background={backgroundButtonModify} 
                 color={colorButtonModify}
                 onclick={()=>handleClickAdd('modifier')}
                 /> 

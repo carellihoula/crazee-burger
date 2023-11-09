@@ -12,6 +12,7 @@ function CardList() {
   const selected = useSelector(state=>state.listItems.selected)
   const isClickedChevron = useSelector(state=>state.toogBtn.isClicked)
   const selectedMenu = useSelector(state=>state.toogBtn.selectedMenu)
+  //const selectedMenu = useSelector(state=>state.toogBtn.selectedMenu)
   const dispatch = useDispatch()
   
     const handleAddToCart = (item)=>{
@@ -27,7 +28,7 @@ function CardList() {
     const handleClickCard = (item)=>{
         dispatch(selectedItem(item))
         dispatch(chevronButtonToTrue())
-        dispatch(selectMenu('notSamefromAjouter'))//mettre selectedmenu !== ajouter
+        dispatch(selectMenu('modifier'))//mettre selectedmenu == modifier pour le background selected au menu <moodifier>
        
     }
 

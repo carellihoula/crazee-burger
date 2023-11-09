@@ -1,9 +1,10 @@
 import { globalList } from "../../utils/list";
-import { ADD_TO_LIST, CLEAR_SELECTED, EDIT_ITEM, REMOVE_TO_LIST, RESET_LIST, SELECT_ITEM } from "./actions";
+import { ADD_TO_LIST, CLEAR_SELECTED, EDIT_ITEM, REMOVE_TO_LIST, RESET_LIST, SEARCH_VALUE, SELECT_ITEM } from "./actions";
 
 const initialState = {
     list : [...globalList],
     selected :{} ,
+    searchValue:''
 };
 
 export default function reducerList(state = initialState, action){
@@ -42,6 +43,11 @@ export default function reducerList(state = initialState, action){
         ...state,
         selected: {}
       };    
+ case SEARCH_VALUE:
+      return{
+        ...state,
+        searchValue: action.payload
+        }
  default:
     return state
   }

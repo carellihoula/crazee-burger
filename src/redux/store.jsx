@@ -6,7 +6,8 @@ import { buttonReducer } from './reducers'
 const rootReducer = combineReducers({
     toogBtn: buttonReducer,
     basket : reducerAddToCart,
-    listItems : reducerList
+    listItems : reducerList,
+    
 })
 
 export const store = configureStore({

@@ -4,8 +4,15 @@ export const SELECT_ITEM = "SELECT_ITEM" ;
 export const EDIT_ITEM = "EDIT_ITEM"
 export const RESET_LIST = "RESET_LIST";
 export const CLEAR_SELECTED = "CLEAR_SELECTED";
+export const SEARCH_VALUE = 'SEARCH_VALUE'
 
+export const setSearchValue = (str) => {
 
+    return {
+        type: SEARCH_VALUE,
+        payload : str
+    };
+}
 export function clearSelected() {
   return {
     type: CLEAR_SELECTED

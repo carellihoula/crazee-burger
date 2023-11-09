@@ -1,20 +1,40 @@
 import styled from 'styled-components';
+import {useState} from 'react'
 import { Logo } from '../../Logo';
 import RightSide from './RightSide';
 import { RefreshhPage } from '../../RefreshPage';
+import SearchBar from './SearchBar';
+import {useSelector, useDispatch} from 'react-redux'
+import { setSearchValue } from '../../../redux/listeItems/actions';
 
 
 export default function Navbar() {
+  const [value, setValue] = useState('')
+  //const valueR = useSelector(state=>state.listItems.searchValue)
+  const dispatch = useDispatch()
+  console.log(valueR);
+  const handleChange = (e) =>{
+    setValue(e.target.value)
+  }
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    dispatch(setSearchValue(value))
+  }
 
   return (
     <Container>
              
-                <Logo width="80px" height="60px" fontSize="36px" handleClick = {RefreshhPage}/> 
-            
+            <Logo width="80px" height="60px" fontSize="36px" handleClick = {RefreshhPage}/> 
+            <SearchBar searchValue={value} 
+              handleChange={handleChange} 
+              handleSubmit={handleSubmit}
+              placeholder="Rechercher Ici"
+            />
             <RightSide/>
     </Container>
   )
 }
+
 
 
 
