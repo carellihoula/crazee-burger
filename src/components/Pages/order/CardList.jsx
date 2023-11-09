@@ -12,7 +12,7 @@ function CardList() {
   const selected = useSelector(state=>state.listItems.selected)
   const isClickedChevron = useSelector(state=>state.toogBtn.isClicked)
   const selectedMenu = useSelector(state=>state.toogBtn.selectedMenu)
-  //const selectedMenu = useSelector(state=>state.toogBtn.selectedMenu)
+  const searchValue = useSelector(state=>state.listItems.searchValue)
   const dispatch = useDispatch()
   
     const handleAddToCart = (item)=>{
@@ -35,7 +35,9 @@ function CardList() {
   return (
     <Container>
             {
-              menuItems.map((item, index)=>{
+              menuItems.filter((element)=> element.title.toLowerCase().includes(searchValue.toLowerCase())
+
+              ).map((item, index)=>{
                     return(
                         <Card key={index} title={item.title} image={item.imageSource} 
                         price={formatPrice(item.price)} 
