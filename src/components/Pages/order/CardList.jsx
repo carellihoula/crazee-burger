@@ -28,14 +28,13 @@ function CardList() {
     const handleClickCard = (item)=>{
         dispatch(selectedItem(item))
         dispatch(chevronButtonToTrue())
-        dispatch(selectMenu('modifier'))//mettre selectedmenu == modifier pour le background selected au menu <moodifier>
-       
+        dispatch(selectMenu('modifier')) //mettre selectedmenu == modifier pour le background selected au menu <moodifier>
     }
 
   return (
     <Container>
             {
-              menuItems.filter((element)=> element.title.toLowerCase().includes(searchValue.toLowerCase())
+              menuItems.filter((element)=> element.title.toLowerCase().includes(searchValue.toLowerCase().trim())
 
               ).map((item, index)=>{
                     return(
