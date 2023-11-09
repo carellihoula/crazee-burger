@@ -10,9 +10,9 @@ import { setSearchValue } from '../../../redux/listeItems/actions';
 
 export default function Navbar() {
   const [value, setValue] = useState('')
-  //const valueR = useSelector(state=>state.listItems.searchValue)
+  //const valueRedux = useSelector(state=>state.listItems.searchValue)
   const dispatch = useDispatch()
-  console.log(valueR);
+  
   const handleChange = (e) =>{
     setValue(e.target.value)
   }
