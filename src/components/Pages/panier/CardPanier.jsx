@@ -10,17 +10,23 @@ export default function CardPanier(props) {
   return (
     <Container>
                                {/*{ item.title} : {item.quantity}<button onClick={()=>handleclick(item.id)}>X</button>*/}
-            
-            <img src={props.image}  title={props.title}/>
-            <div className='name-price'>
-                <h2>{props.title}</h2>
-                <p className='price'>{props.price}€</p>
+            <div className='right-side'>
+                <img src={props.image}  title={props.title}/>
+                <div className='name-price'>
+                    <h2>{props.title}</h2>
+                    <p className='price'>{props.price}€</p>
+                </div>
             </div>
+            
             <div className='qty-price'>
                 <div className='qty'>
-                <HiPlusSm onClick={props.handleplus} style = {{cursor : "pointer"}}/>               
-                <p>{props.quantity}</p>
-                <HiMinusSm onClick={props.handleminus} style ={{cursor : "pointer"}}/>
+                <HiPlusSm onClick={props.handleplus} color="#FFF" 
+                  style = {{cursor : "pointer",backgroundColor:'green',borderRadius:'50%'}}
+                />               
+                <p style={{fontWeight:"900",fontSize:'30px'}}>{props.quantity}</p>
+                <HiMinusSm onClick={props.handleminus} color="#FFF"  
+                  style = {{cursor : "pointer",backgroundColor:'red',borderRadius:'50%'}}
+                />
                 </div>
                 <TiDelete onClick={props.handleclickdelete} className='delete-ti'/>
             </div>
@@ -34,15 +40,15 @@ const Container = styled.div`
   flex-direction: row;
   align-items : center;
   
-  //justify-content: space-around;
+  justify-content: space-between;
   border-radius: 5px;
-  width:90%;
-  height:15%;
+  width:85%;
+  height:85px;
   background: #FFF;
   box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.20);
   margin : 10px 0px 10px 0px;
   padding :  0px 10px 0px 10px;
-  gap : 5px;
+  //gap : 5px;
   //transform : translateX(${({a})=>a ? '100%' : '0'});
   //transition : transform 0.5s ease-in-out;
   img{
@@ -86,7 +92,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 25px;
+    font-size: 23px;
+    gap: 5px;
     
   }
   .qty-price{
@@ -101,6 +108,11 @@ const Container = styled.div`
   }
   .delete-ti{
     color:#FFA01B;
+  }
+  .right-side{
+    display: flex;
+    flex-direction: row;
+    
   }
 
 `;

@@ -11,10 +11,6 @@ export default function AdminPanel() {
     return (
         <Container>
                 {selectedMenu==='ajouter'? (<AjoutForm/>) : (Object.keys(selected).length === 0 ?  <EmpyUpdate/> : <UpdateForm/>) }
-                
-                
-                
-                
                    
         </Container>
       )
