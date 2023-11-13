@@ -60,7 +60,7 @@ function Panier() {
         </div>
 
         <div className="bottom">
-             <p className="paragraph-bottom">Codé avec ❤️ et React.JS</p>
+             <p className="paragraph-bottom">By Carel ❤️ AND React.JS</p>
         </div>
     </Container>
   )
