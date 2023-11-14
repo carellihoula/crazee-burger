@@ -1,13 +1,19 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import {useState} from 'react'
 import { styled } from "styled-components";
+<<<<<<< HEAD
 import { basketEmpty, basketPaiement, removeToCart } from "../../../redux/actions";
 
 import { increaseQty, minusQty } from "../../../redux/cart/actions.quantity";
+=======
+import { basketPaiement, removeToCart } from "../../../redux/actions";
+//import increaseQty from "../../../redux/actions.quantity";
+import { increaseQty, minusQty } from "../../../redux/actions.quantity";
+>>>>>>> 8faee3e82dea8b63ab12be4cdedee3ac770cd3e1
 import { formatPrice } from "../../../utils/FormatPrice";
+import { isEmpty } from "../../../utils/IsEmpty";
 import ButtonComponent from "../../ButtonComponent";
 import CardPanier from "../panier/CardPanier";
-import { isEmpty } from "../../../utils/IsEmpty";
 
 
 function Panier() {
