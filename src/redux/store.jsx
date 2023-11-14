@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import reducerList from './listeItems/reducerList'
-import { reducerAddToCart } from './reducerAddToCart'
 import { buttonReducer } from './reducers'
 
 const rootReducer = combineReducers({
