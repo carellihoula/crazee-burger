@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {useState} from 'react'
 import { styled } from "styled-components";
 import { basketEmpty, basketPaiement, removeToCart } from "../../../redux/actions";
-//import increaseQty from "../../../redux/actions.quantity";
-import { increaseQty, minusQty } from "../../../redux/actions.quantity";
+
+import { increaseQty, minusQty } from "../../../redux/cart/actions.quantity";
 import { formatPrice } from "../../../utils/FormatPrice";
 import ButtonComponent from "../../ButtonComponent";
 import CardPanier from "../panier/CardPanier";

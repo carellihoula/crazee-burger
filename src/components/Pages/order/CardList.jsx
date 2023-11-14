@@ -5,6 +5,7 @@ import { removeToList, selectedItem } from "../../../redux/listeItems/actions";
 import {chevronButtonToTrue,selectMenu} from "../../../redux/actions"
 import { formatPrice } from "../../../utils/FormatPrice";
 import Card from "./Card";
+import {deleteEmptySpace} from "../../../utils/DeleteEmptySpace";
 
 function CardList() {
   //state
@@ -34,7 +35,7 @@ function CardList() {
   return (
     <Container>
             {
-              menuItems.filter((element)=> element.title.toLowerCase().includes(searchValue.toLowerCase().trim())
+              menuItems.filter((element)=> element.title.toLowerCase().includes(deleteEmptySpace(searchValue).toLowerCase())
 
               ).map((item, index)=>{
                     return(

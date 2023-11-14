@@ -1,4 +1,4 @@
-import { ADD_TO_CART, BASKET_EMPTY, BASKET_PAIEMENT, REMOVE_TO_CART } from "./actions";
+import { ADD_TO_CART, BASKET_EMPTY, BASKET_PAIEMENT, REMOVE_TO_CART } from "../actions";
 import { INCREASE_QTY, MINUS_QTY } from "./actions.quantity";
 
 const initialState = {
