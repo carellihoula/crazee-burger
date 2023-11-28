@@ -22,6 +22,9 @@ export default function Navbar() {
     //dispatch(setSearchValue(value))
     dispatch(setSearchValue(value))
   }
+  const handleClickToSearch = () => {
+    dispatch(setSearchValue(value))
+  }
 
   return (
     <Container>
@@ -30,6 +33,7 @@ export default function Navbar() {
             <SearchBar searchValue={value} 
               handleChange={handleChange} 
               handleSubmit={handleSubmit}
+              handleClickToSearch={handleClickToSearch}
               placeholder="Rechercher Ici"
             />
             <RightSide/>

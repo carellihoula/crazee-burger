@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {BsSearch} from 'react-icons/bs'
 
-export default function SearchBar({searchValue,handleChange,placeholder, handleSubmit}) {
+export default function SearchBar({searchValue,handleChange,placeholder, handleSubmit, handleClickToSearch}) {
 
     
   return (
@@ -16,7 +16,7 @@ export default function SearchBar({searchValue,handleChange,placeholder, handleS
                     className='input'
                 />
 
-                <div className='div-icon-search'>
+                <div className='div-icon-search' onClick={handleClickToSearch}>
                     <BsSearch color="#FFF" size={25} />
                 </div>
             </div>

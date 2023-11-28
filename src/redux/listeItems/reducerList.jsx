@@ -3,7 +3,7 @@ import { ADD_TO_LIST, CLEAR_SELECTED, EDIT_ITEM, REMOVE_TO_LIST, RESET_LIST, SEA
 
 const initialState = {
     list : [...globalList],
-    selected :{} ,
+    selected :{},
     searchValue:''
 };
 

@@ -8,34 +8,22 @@ import { editedItem } from '../../../redux/listeItems/actions';
 
 export default function UpdateForm() {
     const dispatch = useDispatch()
-
     const selected = useSelector(state=>state.listItems.selected)
-
-    const [updateItem, setUpdateItem] = useState({...selected})
-
-    
-    console.log(selected);
-   {/*const [form, setForm] = useState({
-        id : ourList.length-1,
-        imageSource : "",
-        title : "",
-        price : "",
-        quantity: 0,
-        isAvailable: true,
-        isAdvertised: false,
-    }) */}
-
+    const [updateItem, setUpdateItem] = useState(selected)
     const [message, setMessage]  = useState("")
+
     const handleChange  = (e) => {
         const {name, value} = e.target;
-        setUpdateItem({
-                ...updateItem,
-                [name] : value
-        })
+        dispatch(editedItem({
+            ...updateItem,
+            [name]: value
+        }));
+        setUpdateItem(prevItem =>({
+            ...prevItem,
+            [name]: value
+        }))
         
     }
-    
-
     
 
     const handleSubmit = (e) =>{
