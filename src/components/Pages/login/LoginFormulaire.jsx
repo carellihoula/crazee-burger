@@ -28,7 +28,7 @@ export default function LoginFormulaire() {
         
         <Form onSubmit={handleSubmit}>
 
-          <h1>Bienvenue chez nous !</h1>
+          <h1>Bienvenue chez nous konzo-wa-konzo!</h1>
           <Bar/>
           <h2>connectez-vous</h2>
 
